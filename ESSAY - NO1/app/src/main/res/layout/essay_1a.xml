@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ESSAY_1A">
+
+    <!-- ESSAY -->
+    <!-- Nicholas Reynaldo - 2301847404 - LA26 -->
+
+    <!-- 1. Relative Positioning -->
+    <!-- Relative Positioning artinya mengatur posisi suatu widget
+    relative dengan widget lainnya, pada contoh textview dgn ID "B"
+    memiliki posisi relative di kanan posisi textview dgn ID "A" dan
+    dibawah parent-->
+
+    <TextView
+        android:id="@+id/A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:textSize="50sp"
+        app:layout_constraintStart_toEndOf="@+id/A"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. Relative Positioning dgn Margin -->
+    <!-- Relative Positioning dgn Margin sama dengan relative
+    positioning hanya bedanya adalah adanya margin, maksud dari
+    margin adalah jarak disekitar suatu widget, pada contoh
+    textview ID "D" memiliki margin kiri sebesar 30dp dan relative
+    dengan textview "C"-->
+
+    <TextView
+        android:id="@+id/C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A" />
+
+    <TextView
+        android:id="@+id/D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D"
+        android:textSize="50sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toEndOf="@+id/C"
+        app:layout_constraintTop_toBottomOf="@+id/B" />
+
+    <!-- 3. Centering Positioning -->
+    <!-- Centering Positioning artinya menengahkan suatu widget
+    pada contoh textview "E" berada ditengah secara horizontal
+    dengan cara diberi constraint left to leftof dan right to rightof,
+    kemudian textview "F" berada jg ditengah tetapi secara vertikal
+    dengan cara diberi constraint bottom to bottomof dan top to topof-->
+
+    <TextView
+        android:id="@+id/E"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/F"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 4. Centering Position with Bias -->
+    <!-- Centering Positioning sama dengan center position hanya ditambahkan
+    bias, bias artinya secara singkat lebih condong ke suatu sisi, pada contoh
+    textview "G" diberi centering position secara vertikal sama dengan "F"
+    tetapi diberi bias vertical sebesar 0.3 yang berarti "G" lebih condong
+    ke atas. Nilai bias adalah 0 hingga 1 dan dibelah menjadi 2 sisi
+    dimana masing - masing sisi memiliki nilai 0 - 0.4 dan 0.6 - 1-->
+
+    <TextView
+        android:id="@+id/G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="G"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <!-- 5. Circular Positioning -->
+    <!-- Circular Positioning artinya menempatkan suatu widget
+    melingkar dengan suatu widget lainnya menggunakan derajat, pada contoh
+    textview "H" berada di 45 derajat dari textview F dengan radius
+    lingkaran sebesar 100dp-->
+
+    <TextView
+        android:id="@+id/H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="H"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintCircle="@id/F"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="45"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
