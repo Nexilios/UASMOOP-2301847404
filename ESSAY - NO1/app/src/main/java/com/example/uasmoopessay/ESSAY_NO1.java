@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class ESSAY_1A extends AppCompatActivity {
+public class ESSAY_NO1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.essay_1a);
+        setContentView(R.layout.essay_no1);
 
         Context context = getApplicationContext();
         CharSequence text = "Hello World!";
