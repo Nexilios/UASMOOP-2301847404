@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ESSAY_1A">
 
-    <!-- ESSAY -->
     <!-- Nicholas Reynaldo - 2301847404 - LA26 -->
+    <!-- ESSAY NO.1 A-->
 
     <!-- 1. Relative Positioning -->
     <!-- Relative Positioning artinya mengatur posisi suatu widget
@@ -123,5 +123,20 @@
         app:layout_constraintCircle="@id/F"
         app:layout_constraintCircleRadius="100dp"
         app:layout_constraintCircleAngle="45"/>
+
+
+    <!-- ESSAY NO.1 B -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/HelloButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        android:text="Hello"
+        android:textSize="20sp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
