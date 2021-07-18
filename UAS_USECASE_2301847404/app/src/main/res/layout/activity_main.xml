@@ -15,12 +15,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.9" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:src="@drawable/castlevscastle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,25 +30,27 @@
 
     <ImageView
         android:id="@+id/PlayerOneWin"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/YouWin"
         app:layout_constraintEnd_toStartOf="@+id/PlayButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PlayerOne"
-        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.1"
         android:visibility="invisible"
         />
 
     <ImageView
         android:id="@+id/PlayerTwoWin"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/YouWin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/PlayButton"
         app:layout_constraintTop_toBottomOf="@+id/PlayerTwo"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintHorizontal_bias="0.9"
         android:visibility="invisible"
         />
 
@@ -56,7 +58,6 @@
         android:id="@+id/PlayerOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Player One"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/PlayerOneWin"
@@ -91,5 +92,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PlayerThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Player Three"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PlayButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerOneWin"
+        app:layout_constraintVertical_bias="0.2"/>
+
+    <TextView
+        android:id="@+id/PlayerFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Player Four"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PlayButton"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerTwoWin"
+        app:layout_constraintVertical_bias="0.2"/>
+
+    <ImageView
+        android:id="@+id/PlayerThreeWin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/YouWin"
+        app:layout_constraintEnd_toStartOf="@+id/PlayButton"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerThree"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:id="@+id/PlayerFourWin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/YouWin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toEndOf="@+id/PlayButton"
+        app:layout_constraintTop_toBottomOf="@+id/PlayerFour"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
