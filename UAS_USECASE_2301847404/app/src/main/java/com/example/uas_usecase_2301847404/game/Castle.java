@@ -1,3 +1,5 @@
+package com.example.uas_usecase_2301847404.game;
+
 import java.util.ArrayList;
 
 public abstract class Castle {
