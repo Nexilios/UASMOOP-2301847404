@@ -1,11 +1,11 @@
 
-public class CavalryCastle extends Castle{
 
-	public CavalryCastle() {
-		this.CastleSkin = Castle.CAVALRY;
+public class CatapultCastle extends Castle{
+
+	public CatapultCastle() {
+		this.CastleSkin = Castle.CATAPULT;
 	}
-
-	@Override
+	
 	public double calculatePower() {
         double power = 0;
         
@@ -25,5 +25,4 @@ public class CavalryCastle extends Castle{
         }
         return power;
 	}
-	
 }

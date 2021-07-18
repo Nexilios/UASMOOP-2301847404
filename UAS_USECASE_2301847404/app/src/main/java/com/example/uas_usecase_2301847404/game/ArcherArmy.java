@@ -1,10 +1,8 @@
-package com.example.uas_usecase_2301847404.game;
 
-public class ArcherArmy extends Army{
+public class ArcherArmy extends Armies{
 
-
-    public ArcherArmy() {
-        this.ArmyType = Army.ARCHER;
-    }
+	public ArcherArmy() {
+		this.ArmyType = Armies.ARCHER;
+	}
 
 }

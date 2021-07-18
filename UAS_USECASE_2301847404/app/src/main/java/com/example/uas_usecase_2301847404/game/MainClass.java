@@ -1,0 +1,147 @@
+import java.util.ArrayList;
+
+public class MainClass {
+
+	public MainClass() {
+		String winner;
+		
+		// Nicholas Reynaldo - 2301847404
+		
+		// Init Castles
+		CavalryCastle ct1 = new CavalryCastle();
+		ArcherCastle ct2 = new ArcherCastle();
+		InfantryCastle ct3 = new InfantryCastle();
+		InfantryCastle ct4 = new InfantryCastle();
+
+		// ===== Battle 1 (Cavalry vs Archer) Simulation ======= \\
+		
+		// Set Army data
+		ArrayList<Armies> arct1 = new ArrayList<Armies>(); // for ct1
+		ArrayList<Armies> arct2 = new ArrayList<Armies>(); // for ct2
+		
+		CavalryArmy carm = new CavalryArmy();
+		carm.setNumbers(100000);
+		
+		ArcherArmy aarm = new ArcherArmy();
+		aarm.setNumbers(80000);
+		
+		arct1.add(carm);
+		arct2.add(aarm);
+		
+		// Set Each Castle's Armies
+		ct1.setArmies(arct1);
+		ct2.setArmies(arct2);
+		
+		// Set Hero data
+		ArrayList<Heroes> arht1 = new ArrayList<Heroes>();
+		ArrayList<Heroes> arht2 = new ArrayList<Heroes>();
+		
+		// Add Heroes
+		CavalryHero ch1 = new CavalryHero();
+		ArcherHero ah1 = new ArcherHero();
+		
+		ch1.setHeroCount(5);
+		ah1.setHeroCount(5);
+		
+		arht1.add(ch1);
+		arht2.add(ah1);
+		
+		// Set Each Castle's Heroes
+		ct1.setHeroes(arht1);
+		ct2.setHeroes(arht2);
+		
+		// Determine Battle 1 Winner
+		Double ct1power, ct2power;
+		Double ct2casul, ct1casul;
+		Double ct1result, ct2result;
+		
+		ct1power = ct1.calculatePower();
+		ct2power = ct2.calculatePower();
+		
+		ct2casul = ct1power * 0.1;
+		ct1casul = ct2power * 0.4;
+		
+		ct1result = ct1power - ct1casul;
+		ct2result = ct2power - ct2casul;
+		
+		if(ct1result > ct2result) {
+			winner = "ct1";
+		}else {
+			winner = "ct2";
+		}
+		
+		// ===== Battle 2 (Mix[Infantry + Archer] vs Infantry) Simulation ======= \\
+		
+		// Set Army data
+		ArrayList<Armies> arct3 = new ArrayList<Armies>(); // for ct3
+		ArrayList<Armies> arct4 = new ArrayList<Armies>(); // for ct4
+		
+		InfantryArmy iarm1 = new InfantryArmy(); // CT4
+		iarm1.setNumbers(100000);
+		
+		ArcherArmy aarm2 = new ArcherArmy(); // CT3
+		aarm2.setNumbers(60000);
+		CavalryArmy carm2 = new CavalryArmy();
+		carm2.setNumbers(40000);
+		
+		arct3.add(carm2);
+		arct3.add(aarm2);
+		arct4.add(iarm1);
+		
+		// Set Each Castle's Armies
+		ct3.setArmies(arct3);
+		ct4.setArmies(arct4);
+		
+		// Set Hero data
+		ArrayList<Heroes> arht3 = new ArrayList<Heroes>();
+		ArrayList<Heroes> arht4 = new ArrayList<Heroes>();
+		
+		// Add Heroes
+		InfantryHero ih1 = new InfantryHero();
+		CavalryHero ch2 = new CavalryHero();
+		ArcherHero ah2 = new ArcherHero();
+		
+		ih1.setHeroCount(5);
+		
+		ch2.setHeroCount(2);
+		ah2.setHeroCount(3);
+		
+		arht3.add(ch2);
+		arht3.add(ah2);
+		
+		arht4.add(ih1);
+		
+		// Set Each Castle's Heroes
+		ct3.setHeroes(arht3);
+		ct4.setHeroes(arht4);
+		
+		// Determine Battle 2 Winner
+		Double ct3power, ct4power;
+		Double ct4casul, ct3casul;
+		Double ct3result, ct4result;
+		
+		ct3power = ct3.calculatePower();
+		ct4power = ct4.calculatePower();
+		
+		ct4casul = ct3power * (0.1 + 0.4);
+		ct3casul = ct4power * (0.4 + 0.1);
+		
+		ct3result = ct3power - ct3casul;
+		ct4result = ct4power - ct4casul;
+		
+		if(ct3result > ct4result) {
+			winner = "ct3";
+		}else {
+			winner = "ct4";
+		}
+		
+		System.out.println(winner);
+	}
+
+	
+	public static void main(String[] args) {
+		new MainClass();
+
+	}
+
+}

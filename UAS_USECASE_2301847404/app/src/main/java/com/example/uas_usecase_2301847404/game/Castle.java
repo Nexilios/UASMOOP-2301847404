@@ -1,28 +1,68 @@
-package com.example.uas_usecase_2301847404.game;
+import java.util.ArrayList;
 
 public abstract class Castle {
-    public static final String INFANTRY = "INFANTRY";
-    public static final String CAVALRY = "CAVALRY";
-    public static final String ARCHER = "ARCHER";
+	
+    protected static final String INFANTRY = "Infantry";
+    protected static final String CAVALRY = "Cavalry";
+    protected static final String ARCHER = "Archer";
+    protected static final String CATAPULT = "Catapult";
+	
+    protected static final double ARCHER_BOOST = 0.2;
+    protected static final double CAVALRY_BOOST = 0.2;
+    protected static final double INFANTRY_BOOST = 0.2;
+    protected static final double CATAPULT_BOOST = 0.2;
+    
 
-    public String CastleType;
-    public Heroes[] Heroes;
-    public Army[] Armies;
+	protected String CastleSkin;
+	protected ArrayList<Heroes> Heroes;
+	protected ArrayList<Armies> Armies;
+	
+	public String getCastleSkin() {
+		return CastleSkin;
+	}
 
-    public Army[] ArmiesToBattle;
+	
+	
+	public void setCastleSkin(String castleSkin) {
+		CastleSkin = castleSkin;
+	}
+	
+	
+	
+	public ArrayList<Heroes> getHeroes() {
+		return Heroes;
+	}
+	
+
+	public Castle(String castleSkin, ArrayList<Heroes> heroes, ArrayList<Armies> armies) {
+		super();
+		CastleSkin = castleSkin;
+		Heroes = heroes;
+		Armies = armies;
+	}
 
 
-    public String getCastleType() {
-        return this.CastleType;
-    }
 
-    public abstract double calculatePower();
-
-    public abstract Castle battleTo(Castle ct2);
-
-    public abstract void setArmy(Army[] Armies);
+	public void setHeroes(ArrayList<Heroes> heroes) {
+		Heroes = heroes;
+	}
 
 
 
+	public ArrayList<Armies> getArmies() {
+		return Armies;
+	}
+
+
+
+	public void setArmies(ArrayList<Armies> armies) {
+		Armies = armies;
+	}
+
+	protected abstract double calculatePower();
+	
+	public Castle() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

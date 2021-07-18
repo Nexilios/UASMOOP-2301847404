@@ -1,8 +1,9 @@
 
-public class CavalryCastle extends Castle{
 
-	public CavalryCastle() {
-		this.CastleSkin = Castle.CAVALRY;
+public class ArcherCastle extends Castle{
+
+	public ArcherCastle() {
+		this.CastleSkin = Castle.ARCHER;
 	}
 
 	@Override

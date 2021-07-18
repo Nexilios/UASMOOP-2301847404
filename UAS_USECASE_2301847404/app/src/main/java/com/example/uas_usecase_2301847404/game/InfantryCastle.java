@@ -1,33 +1,29 @@
-package com.example.uas_usecase_2301847404.game;
 
-public class InfantryCastle extends Castle {
 
-    public InfantryCastle() {
-        this.CastleType = Castle.INFANTRY;
-    }
+public class InfantryCastle extends Castle{
 
-    @Override
-    public double calculatePower() {
+	public InfantryCastle() {
+		this.CastleSkin = Castle.INFANTRY;
+	}
 
+	public double calculatePower() {
         double power = 0;
-        for (Army arm: this.ArmiesToBattle) {
-            if (arm.ArmyType == Army.INFANTRY) {
-                power += arm.numbers + arm.numbers * Army.INFANTRY_BOOST;
+        
+        for (Armies arm: this.Armies) {
+            if (this.getHeroes().toString().contains(arm.ArmyType)) {
+            	Integer herocount = 0;
+            	for (Heroes h1 : Heroes) {
+					if(h1.getHeroType() == arm.getArmyType()) {
+						herocount = h1.getHeroCount();
+					}
+				}
+            	Double boost = (double) (0.4 * herocount);
+            	power += arm.numbers + arm.numbers * boost;
             }else {
                 power += arm.numbers;
             }
         }
         return power;
-    }
-
-    @Override
-    public Castle battleTo(Castle ct2) {
-        return this;
-    }
-
-    @Override
-    public void setArmy(Army[] Armies) {
-
-    }
-
+	}
+	
 }
