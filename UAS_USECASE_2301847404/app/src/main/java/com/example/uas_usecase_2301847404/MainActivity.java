@@ -3,6 +3,9 @@ package com.example.uas_usecase_2301847404;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.uas_usecase_2301847404.game.ArcherArmy;
 import com.example.uas_usecase_2301847404.game.ArcherCastle;
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Armies> arct4 = new ArrayList<Armies>(); // for ct4
 
         InfantryArmy iarm1 = new InfantryArmy(); // CT4
-        iarm1.setNumbers(100000);
+        iarm1.setNumbers(50000);
 
         ArcherArmy aarm2 = new ArcherArmy(); // CT3
         aarm2.setNumbers(60000);
@@ -156,6 +159,29 @@ public class MainActivity extends AppCompatActivity {
         }else {
             winner2 = "ct4";
         }
+
+        Button button = (Button) findViewById(R.id.PlayButton);
+        ImageView img1 = (ImageView) findViewById(R.id.PlayerOneWin);
+        ImageView img2 = (ImageView) findViewById(R.id.PlayerTwoWin);
+        ImageView img3 = (ImageView) findViewById(R.id.PlayerThreeWin);
+        ImageView img4 = (ImageView) findViewById(R.id.PlayerFourWin);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if(winner1 == "ct1"){
+                    img1.setVisibility(View.VISIBLE);
+                }else{
+                    img2.setVisibility(View.VISIBLE);
+                }
+
+                if(winner2 == "ct3"){
+                    img3.setVisibility(View.VISIBLE);
+                }else{
+                    img4.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
     }
 }
