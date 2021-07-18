@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         // Init Castles
         CavalryCastle ct1 = new CavalryCastle();
         ArcherCastle ct2 = new ArcherCastle();
-        InfantryCastle ct3 = new InfantryCastle();
+        ArcherCastle ct3 = new ArcherCastle();
         InfantryCastle ct4 = new InfantryCastle();
 
         // ===== Battle 1 (Cavalry vs Archer) Simulation ======= \\
@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         ct2casul = ct1power * 0.1;
         ct1casul = ct2power * 0.4;
 
-        ct1result = ct1power - ct1casul;
-        ct2result = ct2power - ct2casul;
+        ct1result = Math.max(0, carm.getNumbers() - ct1casul);
+        ct2result = Math.max(0, aarm.getNumbers() - ct2casul);
 
         if(ct1result > ct2result) {
             winner1 = "ct1";
@@ -141,20 +141,25 @@ public class MainActivity extends AppCompatActivity {
         ct4.setHeroes(arht4);
 
         // Determine Battle 2 Winner
-        Double ct3power, ct4power;
-        Double ct4casul, ct3casul;
-        Double ct3result, ct4result;
+        Double ct3power1, ct3power2, ct4power;
+        Double ct4casul1, ct4casul2, ct3casul1, ct3casul2;
+        Double ct3result1, ct3result2, ct3totalresult, ct4result;
 
-        ct3power = ct3.calculatePower();
+        ct3power1 = aarm2.getNumbers() + (aarm2.getNumbers() * (0.4 * 3));
+        ct3power2 = carm2.getNumbers() + (carm2.getNumbers() * (0.8 * 2));
         ct4power = ct4.calculatePower();
 
-        ct4casul = ct3power * (0.1 + 0.4);
-        ct3casul = ct4power * (0.4 + 0.1);
+        ct4casul1 = ct3power1 * 0.1;
+        ct4casul2 = ct3power2 * 0.4;
+        ct3casul1 = ct4power * 0.1;
+        ct3casul2 = ct4power * 0.4;
 
-        ct3result = ct3power - ct3casul;
-        ct4result = ct4power - ct4casul;
+        ct3result1 = Math.max(0, aarm2.getNumbers() - ct3casul1);
+        ct3result2 = Math.max(0, carm2.getNumbers() - ct3casul2);
+        ct3totalresult = ct3result1 + ct3result2;
+        ct4result = Math.max(0,iarm1.getNumbers() - (ct4casul1 + ct4casul2));
 
-        if(ct3result > ct4result) {
+        if(ct3totalresult > ct4result) {
             winner2 = "ct3";
         }else {
             winner2 = "ct4";
